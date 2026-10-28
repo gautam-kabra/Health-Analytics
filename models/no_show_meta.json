@@ -1,0 +1,397 @@
+{
+  "target": "appointment no-show",
+  "models": [
+    "LogisticRegression",
+    "DecisionTreeClassifier"
+  ],
+  "calibration": "sigmoid (Platt), 3-fold, ensemble=False",
+  "trained_at": "2026-10-26T12:09:29",
+  "n_records": 110526,
+  "positive_rate": 0.20193438647919945,
+  "date_range": {
+    "start": "2016-04-29",
+    "end": "2016-06-08"
+  },
+  "features": {
+    "numeric": [
+      "Age",
+      "lead_time_days",
+      "Scholarship",
+      "Hipertension",
+      "Diabetes",
+      "Alcoholism",
+      "SMS_received",
+      "has_handicap",
+      "chronic_conditions",
+      "is_same_day"
+    ],
+    "categorical": [
+      "Gender",
+      "weekday",
+      "Neighbourhood",
+      "age_group"
+    ]
+  },
+  "thresholds": {
+    "logistic": 0.223,
+    "tree": 0.245
+  },
+  "risk_bands": {
+    "low_max": 0.167,
+    "high_min": 0.335
+  },
+  "metrics": {
+    "logistic": {
+      "model": "Logistic Regression (calibrated)",
+      "threshold": 0.223,
+      "roc_auc": 0.7205,
+      "accuracy": 0.6082,
+      "precision": 0.3115,
+      "recall": 0.7773,
+      "f1": 0.4448,
+      "brier": 0.1453,
+      "confusion_matrix": {
+        "tn": 9974,
+        "fp": 7668,
+        "fn": 994,
+        "tp": 3470
+      }
+    },
+    "tree": {
+      "model": "Decision Tree (calibrated)",
+      "threshold": 0.245,
+      "roc_auc": 0.7221,
+      "accuracy": 0.6332,
+      "precision": 0.3162,
+      "recall": 0.7023,
+      "f1": 0.4361,
+      "brier": 0.145,
+      "confusion_matrix": {
+        "tn": 10862,
+        "fp": 6780,
+        "fn": 1329,
+        "tp": 3135
+      }
+    }
+  },
+  "options": {
+    "neighbourhoods": [
+      "AEROPORTO",
+      "ANDORINHAS",
+      "ANT\u00d4NIO HON\u00d3RIO",
+      "ARIOVALDO FAVALESSA",
+      "BARRO VERMELHO",
+      "BELA VISTA",
+      "BENTO FERREIRA",
+      "BOA VISTA",
+      "BONFIM",
+      "CARATO\u00cdRA",
+      "CENTRO",
+      "COMDUSA",
+      "CONQUISTA",
+      "CONSOLA\u00c7\u00c3O",
+      "CRUZAMENTO",
+      "DA PENHA",
+      "DE LOURDES",
+      "DO CABRAL",
+      "DO MOSCOSO",
+      "DO QUADRO",
+      "ENSEADA DO SU\u00c1",
+      "ESTRELINHA",
+      "FONTE GRANDE",
+      "FORTE S\u00c3O JO\u00c3O",
+      "FRADINHOS",
+      "GOIABEIRAS",
+      "GRANDE VIT\u00d3RIA",
+      "GURIGICA",
+      "HORTO",
+      "ILHA DAS CAIEIRAS",
+      "ILHA DE SANTA MARIA",
+      "ILHA DO BOI",
+      "ILHA DO FRADE",
+      "ILHA DO PR\u00cdNCIPE",
+      "ILHAS OCE\u00c2NICAS DE TRINDADE",
+      "INHANGUET\u00c1",
+      "ITARAR\u00c9",
+      "JABOUR",
+      "JARDIM CAMBURI",
+      "JARDIM DA PENHA",
+      "JESUS DE NAZARETH",
+      "JOANA D\u00b4ARC",
+      "JUCUTUQUARA",
+      "MARIA ORTIZ",
+      "MARU\u00cdPE",
+      "MATA DA PRAIA",
+      "MONTE BELO",
+      "MORADA DE CAMBURI",
+      "M\u00c1RIO CYPRESTE",
+      "NAZARETH",
+      "NOVA PALESTINA",
+      "PARQUE INDUSTRIAL",
+      "PARQUE MOSCOSO",
+      "PIEDADE",
+      "PONTAL DE CAMBURI",
+      "PRAIA DO CANTO",
+      "PRAIA DO SU\u00c1",
+      "REDEN\u00c7\u00c3O",
+      "REP\u00daBLICA",
+      "RESIST\u00caNCIA",
+      "ROM\u00c3O",
+      "SANTA CEC\u00cdLIA",
+      "SANTA CLARA",
+      "SANTA HELENA",
+      "SANTA LU\u00cdZA",
+      "SANTA L\u00daCIA",
+      "SANTA MARTHA",
+      "SANTA TEREZA",
+      "SANTO ANDR\u00c9",
+      "SANTO ANT\u00d4NIO",
+      "SANTOS DUMONT",
+      "SANTOS REIS",
+      "SEGURAN\u00c7A DO LAR",
+      "SOLON BORGES",
+      "S\u00c3O BENEDITO",
+      "S\u00c3O CRIST\u00d3V\u00c3O",
+      "S\u00c3O JOS\u00c9",
+      "S\u00c3O PEDRO",
+      "TABUAZEIRO",
+      "UNIVERSIT\u00c1RIO",
+      "VILA RUBIM"
+    ],
+    "weekdays": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "genders": [
+      "F",
+      "M"
+    ],
+    "age_groups": [
+      "0-17",
+      "18-34",
+      "35-49",
+      "50-64",
+      "65+"
+    ]
+  },
+  "eda": {
+    "no_show_rate_by_weekday": {
+      "Monday": 0.2065,
+      "Tuesday": 0.2009,
+      "Wednesday": 0.1969,
+      "Thursday": 0.1935,
+      "Friday": 0.2123,
+      "Saturday": 0.2308
+    },
+    "no_show_rate_by_age_group": {
+      "0-17": 0.219,
+      "18-34": 0.2398,
+      "35-49": 0.2054,
+      "50-64": 0.1672,
+      "65+": 0.155
+    },
+    "no_show_rate_by_sms": {
+      "0": 0.167,
+      "1": 0.2757
+    },
+    "no_show_rate_by_lead_bin": {
+      "Same day": 0.0466,
+      "1-3 days": 0.2289,
+      "4-7 days": 0.252,
+      "8-14 days": 0.3047,
+      "15-30 days": 0.3259,
+      "31+ days": 0.33
+    },
+    "top_neighbourhoods": [
+      {
+        "neighbourhood": "SANTOS DUMONT",
+        "no_show_rate": 0.2892,
+        "appointments": 1276
+      },
+      {
+        "neighbourhood": "SANTA CEC\u00cdLIA",
+        "no_show_rate": 0.2746,
+        "appointments": 448
+      },
+      {
+        "neighbourhood": "SANTA CLARA",
+        "no_show_rate": 0.2648,
+        "appointments": 506
+      },
+      {
+        "neighbourhood": "ITARAR\u00c9",
+        "no_show_rate": 0.2627,
+        "appointments": 3514
+      },
+      {
+        "neighbourhood": "JESUS DE NAZARETH",
+        "no_show_rate": 0.244,
+        "appointments": 2853
+      },
+      {
+        "neighbourhood": "HORTO",
+        "no_show_rate": 0.24,
+        "appointments": 175
+      },
+      {
+        "neighbourhood": "ILHA DO PR\u00cdNCIPE",
+        "no_show_rate": 0.2348,
+        "appointments": 2266
+      },
+      {
+        "neighbourhood": "CARATO\u00cdRA",
+        "no_show_rate": 0.2304,
+        "appointments": 2565
+      },
+      {
+        "neighbourhood": "ANDORINHAS",
+        "no_show_rate": 0.2303,
+        "appointments": 2262
+      },
+      {
+        "neighbourhood": "PRAIA DO SU\u00c1",
+        "no_show_rate": 0.2283,
+        "appointments": 1288
+      },
+      {
+        "neighbourhood": "GURIGICA",
+        "no_show_rate": 0.226,
+        "appointments": 2018
+      },
+      {
+        "neighbourhood": "BENTO FERREIRA",
+        "no_show_rate": 0.2249,
+        "appointments": 858
+      }
+    ]
+  },
+  "feature_importance_top": [
+    {
+      "feature": "is_same_day",
+      "importance": 0.8033
+    },
+    {
+      "feature": "Age",
+      "importance": 0.1013
+    },
+    {
+      "feature": "lead_time_days",
+      "importance": 0.0299
+    },
+    {
+      "feature": "SMS_received",
+      "importance": 0.0128
+    },
+    {
+      "feature": "Gender_M",
+      "importance": 0.0098
+    },
+    {
+      "feature": "Neighbourhood_SANTOS DUMONT",
+      "importance": 0.0075
+    },
+    {
+      "feature": "chronic_conditions",
+      "importance": 0.0063
+    },
+    {
+      "feature": "weekday_Monday",
+      "importance": 0.005
+    },
+    {
+      "feature": "weekday_Tuesday",
+      "importance": 0.0037
+    },
+    {
+      "feature": "Neighbourhood_BELA VISTA",
+      "importance": 0.0025
+    },
+    {
+      "feature": "Neighbourhood_RESIST\u00caNCIA",
+      "importance": 0.0023
+    },
+    {
+      "feature": "Alcoholism",
+      "importance": 0.0022
+    },
+    {
+      "feature": "weekday_Wednesday",
+      "importance": 0.0017
+    },
+    {
+      "feature": "Neighbourhood_S\u00c3O PEDRO",
+      "importance": 0.0017
+    },
+    {
+      "feature": "age_group_18-34",
+      "importance": 0.0016
+    }
+  ],
+  "logistic_coefficients_top": [
+    {
+      "feature": "is_same_day",
+      "coefficient": -0.9996
+    },
+    {
+      "feature": "age_group_65+",
+      "coefficient": -0.9027
+    },
+    {
+      "feature": "age_group_50-64",
+      "coefficient": -0.7264
+    },
+    {
+      "feature": "Neighbourhood_SANTOS DUMONT",
+      "coefficient": 0.6005
+    },
+    {
+      "feature": "Neighbourhood_SOLON BORGES",
+      "coefficient": -0.4352
+    },
+    {
+      "feature": "Neighbourhood_DE LOURDES",
+      "coefficient": -0.4077
+    },
+    {
+      "feature": "age_group_35-49",
+      "coefficient": -0.3605
+    },
+    {
+      "feature": "Neighbourhood_ITARAR\u00c9",
+      "coefficient": 0.3218
+    },
+    {
+      "feature": "Neighbourhood_DO CABRAL",
+      "coefficient": -0.3147
+    },
+    {
+      "feature": "Neighbourhood_SANTA CEC\u00cdLIA",
+      "coefficient": 0.2871
+    },
+    {
+      "feature": "Neighbourhood_ARIOVALDO FAVALESSA",
+      "coefficient": 0.2796
+    },
+    {
+      "feature": "Neighbourhood_COMDUSA",
+      "coefficient": -0.2582
+    },
+    {
+      "feature": "Neighbourhood_BARRO VERMELHO",
+      "coefficient": 0.2554
+    },
+    {
+      "feature": "Neighbourhood_ILHA DAS CAIEIRAS",
+      "coefficient": 0.255
+    },
+    {
+      "feature": "Neighbourhood_MATA DA PRAIA",
+      "coefficient": -0.2475
+    }
+  ]
+}

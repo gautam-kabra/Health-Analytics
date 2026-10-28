@@ -1,0 +1,109 @@
+{
+  "model": "KMeans",
+  "k": 4,
+  "trained_at": "2026-10-26T12:03:24",
+  "n_patients": 62298,
+  "features": [
+    "age",
+    "appointments",
+    "avg_lead_time",
+    "chronic_conditions",
+    "sms_rate"
+  ],
+  "inertia": 164221.00015750658,
+  "silhouette": 0.3438803478380366,
+  "cluster_profiles": {
+    "0": {
+      "label": "Older chronic patients",
+      "patients": 12268,
+      "share": 0.197,
+      "age": 61.1,
+      "appointments": 1.66,
+      "avg_lead_time": 7.54,
+      "chronic_conditions": 1.37,
+      "sms_rate": 0.24,
+      "no_show_rate": 0.16
+    },
+    "1": {
+      "label": "Long-lead bookers",
+      "patients": 16783,
+      "share": 0.269,
+      "age": 34.6,
+      "appointments": 1.43,
+      "avg_lead_time": 24.21,
+      "chronic_conditions": 0.1,
+      "sms_rate": 0.88,
+      "no_show_rate": 0.28
+    },
+    "2": {
+      "label": "Young low-contact patients",
+      "patients": 30890,
+      "share": 0.496,
+      "age": 28.22,
+      "appointments": 1.57,
+      "avg_lead_time": 5.76,
+      "chronic_conditions": 0.01,
+      "sms_rate": 0.07,
+      "no_show_rate": 0.17
+    },
+    "3": {
+      "label": "Frequent attenders",
+      "patients": 2357,
+      "share": 0.038,
+      "age": 36.07,
+      "appointments": 7.41,
+      "avg_lead_time": 7.69,
+      "chronic_conditions": 0.21,
+      "sms_rate": 0.31,
+      "no_show_rate": 0.22
+    }
+  },
+  "cluster_descriptions": {
+    "Frequent attenders": "High-utilisation patients with many appointments. Prioritise care coordination, continuity of care and proactive outreach.",
+    "Older chronic patients": "Older patients with more chronic conditions. Focus on chronic-care follow-up, transport support and accessible appointment times.",
+    "Long-lead bookers": "Patients who book well in advance and receive many SMS reminders. Send confirmations closer to the visit and use waiting-list backfill.",
+    "Young low-contact patients": "Younger, low-utilisation patients with little SMS contact. Use digital reminders, self-service rescheduling and first-appointment follow-up."
+  },
+  "overall_no_show_rate": 0.19643308400717,
+  "cluster_scan": [
+    {
+      "k": 2,
+      "inertia": 242455.1,
+      "silhouette": 0.327
+    },
+    {
+      "k": 3,
+      "inertia": 187277.8,
+      "silhouette": 0.332
+    },
+    {
+      "k": 4,
+      "inertia": 164221.0,
+      "silhouette": 0.344
+    },
+    {
+      "k": 5,
+      "inertia": 144560.5,
+      "silhouette": 0.335
+    },
+    {
+      "k": 6,
+      "inertia": 128111.5,
+      "silhouette": 0.338
+    },
+    {
+      "k": 7,
+      "inertia": 110571.1,
+      "silhouette": 0.301
+    },
+    {
+      "k": 8,
+      "inertia": 99953.8,
+      "silhouette": 0.316
+    }
+  ],
+  "pca_explained_variance": [
+    0.2993093744231306,
+    0.2843768482972413
+  ]
+}

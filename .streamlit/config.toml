@@ -1,0 +1,20 @@
+[theme]
+base = "dark"
+primaryColor = "#4da3e8"
+backgroundColor = "#0a111c"
+secondaryBackgroundColor = "#111a28"
+textColor = "#e8f0fb"
+font = "'Segoe UI', 'Helvetica Neue', sans-serif"
+borderColor = "#233146"
+dataframeBorderColor = "#233146"
+dataframeHeaderBackgroundColor = "#162233"
+dataframeHeaderTextColor = "#93a6bc"
+showWidgetBorder = true
+baseRadius = "0.55rem"
+
+[client]
+toolbarMode = "minimal"
+showErrorDetails = "none"
+
+[browser]
+gatherUsageStats = false
