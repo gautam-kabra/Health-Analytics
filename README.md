@@ -134,31 +134,6 @@ HEALTH_API_URL = "https://<api-service>.onrender.com"
 Streamlit Community Cloud ignores `runtime.txt`; select the Python version in
 the deployment dialog or the app's settings.
 
-### Alternative: both on Render
-
-To host both services on Render, deploy the dashboard as a second web service:
-
-| Service | Build command | Start command | Health check |
-|---|---|---|---|
-| API | `pip install -r requirements.txt` | `uvicorn app:app --host 0.0.0.0 --port $PORT` | `/health` |
-| Dashboard | `pip install -r requirements.txt` | `streamlit run dashboard.py --server.address 0.0.0.0 --server.port $PORT --server.headless true` | `/_stcore/health` |
-
-Set `HEALTH_API_URL` on the dashboard service to the API origin. The dashboard
-normalizes a bare Render hostname to `https://`.
-
-### Deployment notes
-
-- Render free web services sleep after 15 minutes of inactivity and take about a
-  minute to wake. The dashboard's initial health check has a 5-second timeout, so
-  the first visit after idle may show **Prediction service unavailable**; click
-  **Retry connection** after the API wakes.
-- Streamlit Community Cloud's free tier has limited RAM, sleeps after extended
-  inactivity, and does not support custom domains.
-- `ALLOWED_ORIGINS` is an optional comma-separated CORS allow-list on the API.
-  It defaults to `*`; the dashboard calls the API server-side, so the default is
-  sufficient. Set explicit origins if you add a browser-based client.
-- Never commit `.streamlit/secrets.toml`.
-
 ## Notebooks
 
 The notebooks are pre-executed and contain EDA, feature engineering, model training, evaluation plots and artifact-saving code.
