@@ -5,7 +5,7 @@ End-to-end healthcare operations analytics project combining four machine-learni
 | Task | Technique | Dataset |
 |---|---|---|
 | Department-level patient demand estimation | Linear Regression | Patient-flow records |
-| Appointment no-show risk | Logistic Regression (calibrated) | Medical appointments |
+| Appointment no-show risk | Logistic Regression (calibrated) | Medical appointments | 
 | Appointment classification / rules | Decision Tree | Medical appointments |
 | Patient segmentation | K-Means | Patient-level appointment history |
 
